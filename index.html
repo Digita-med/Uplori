@@ -56,7 +56,13 @@
       .animate-gradient {
         background: linear-gradient(-45deg, #f0f9ff, #e0f2fe, #eef2ff, #f5f3ff);
         background-size: 400% 400%;
-        animation: gradient 15s ease infinite;
+      }
+      
+      /* Enable animation only on larger screens to save battery/performance on mobile */
+      @media (min-width: 768px) {
+        .animate-gradient {
+          animation: gradient 15s ease infinite;
+        }
       }
       
       @keyframes gradient {
@@ -72,9 +78,11 @@
         66% { transform: translate(-20px, 20px) scale(0.9); }
         100% { transform: translate(0px, 0px) scale(1); }
       }
+      
       .animate-blob {
         animation: blob 7s infinite;
       }
+      
       .animation-delay-2000 {
         animation-delay: 2s;
       }
@@ -83,7 +91,6 @@
       }
     </style>
 
-<link rel="stylesheet" href="/index.css">
   <script type="importmap">
 {
   "imports": {
@@ -91,11 +98,13 @@
     "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
     "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
     "react/": "https://aistudiocdn.com/react@^19.2.0/",
-    "react": "https://aistudiocdn.com/react@^19.2.0"
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "vite": "https://aistudiocdn.com/vite@^7.2.6",
+    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.1"
   }
 }
 </script>
-  <script type="module" crossorigin src="https://cdn.jsdelivr.net/gh/Digita-med/Uplori@main/assets/index-BRLS3dBz.js"></script>
+  <script type="module" crossorigin src="/assets/script.js"></script>
 </head>
   <body>
     <div id="root"></div>
